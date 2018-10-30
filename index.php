@@ -1,9 +1,9 @@
 <?php
+require_once 'app/helpers.php';
+require './vendor/autoload.php';
 
 use App\Engine\DI;
 use App\Engine\Storage;
-require_once 'app/helpers.php';
-require './vendor/autoload.php';
 
 try {
     DI::start();

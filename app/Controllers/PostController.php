@@ -31,7 +31,7 @@ class PostController extends Controller
 
     public function search()
     {
-        $search_str = $this->request->getParam('q');
+        $search_str = htmlspecialchars(trim($this->request->getParam('q')));
 
         $posts = Post::where([['text', 'like', '%' . $search_str . '%']]);
 

@@ -7,7 +7,7 @@
         <div class="card-body">
             <form action="/search/" method="get">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for..." name="q">
+                    <input type="text" class="form-control" placeholder="Search for..." name="q" required>
                     <span class="input-group-btn">
                   <button class="btn btn-secondary" type="submit">Найти записи</button>
                 </span>
