@@ -1,6 +1,7 @@
 # blog
 
 #initial project
+
 0. composer install
 1. phinx.yml.example > phinx.yml
 2. Configure phinx.yml
