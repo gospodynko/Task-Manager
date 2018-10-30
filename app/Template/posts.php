@@ -1,9 +1,11 @@
 <!-- Blog Entries Column -->
 <div class="col-md-8">
     <br>
+    <?php if (count($data['populars'])) { ?>
     <h2 class="my-4">
         Популярные записи
     </h2>
+    <?php } ?>
     <div class="row">
         <div class="col-md-12">
             <div class="slick-list">
@@ -90,7 +92,12 @@
         }
     ?>
 
+    <?php if (!$data['pages']) { ?>
+        <h3>Записи отсутствуют</h3>
+    <?php } ?>
 
+
+    <?php if (count($data['pages']) > 5) { ?>
 <!--     Pagination-->
     <ul class="pagination justify-content-center mb-4">
         <?php
@@ -101,6 +108,7 @@
             </li>
         <?php } ?>
     </ul>
+    <?php } ?>
 
 </div>
 
