@@ -1,8 +1,6 @@
 # blog
 
 #initial project
-required php 7.1 min
-
 0. composer install
 1. phinx.yml.example > phinx.yml
 2. Configure phinx.yml
