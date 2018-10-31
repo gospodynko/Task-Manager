@@ -18,7 +18,7 @@
     </h2>
 
     <?php
-        $errors = $_SESSION['comment_errors'];
+        $errors = $_SESSION['comment_errors'] ?? null;
         $inputs = $_SESSION['inputs'] ?? null;
     ?>
 

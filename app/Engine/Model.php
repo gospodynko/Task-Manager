@@ -51,7 +51,7 @@ class Model
      * @param int $limit
      * @return array
      */
-    public function getPopular(string $join_table, string $count_name, string $column_join, $limit = 5)
+    static public function getPopular(string $join_table, string $count_name, string $column_join, $limit = 5)
     {
         $model = new static;
         $sql = "SELECT " . $model->table . ".*, COUNT(" . $join_table . ".id) as " . $count_name . "  FROM `" . $model->table . "`";

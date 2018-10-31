@@ -31,8 +31,8 @@
         </div>
     </div>
     <?php
-    $errors = $_SESSION['post_errors'];
-    $inputs = $_SESSION['inputs_post'] ?? null;
+        $errors = $_SESSION['post_errors'] ?? null;
+        $inputs = $_SESSION['inputs_post'] ?? null;
     ?>
     <br>
     <form action="/post/add" method="post">
