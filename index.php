@@ -11,12 +11,15 @@ use App\Engine\Storage;
 try {
     DI::start();
     $router = Storage::get('Router');
-    $router->get('/', 'HomeController@index');
-    $router->get('/post/', 'PostController@get');
-    $router->get('/search/', 'PostController@search');
+    $router->post('/', 'AuthController@login');
+//    $router->get('/post/', 'PostController@get');
+//    $router->get('/search/', 'PostController@search');
     $router->post('/post/add', 'PostController@add');
-    $router->post('/comment/add', 'PostController@addComment');
-    $router->get('/404', 'SystemController@notFound');
+    $router->post('/login', 'AuthController@login');
+    $router->get('/getUser', 'AuthController@getUser');
+    $router->get('/fibonacci', 'ExerciseController@fibonacci');
+//    $router->post('/comment/add', 'PostController@addComment');
+//    $router->get('/404', 'SystemController@notFound');
     $app = Storage::get('App');
     $app->run();
 } catch (\Exception $e) {

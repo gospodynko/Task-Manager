@@ -14,22 +14,27 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        $_SESSION['comment_errors'] = null;
-        $_SESSION['inputs'] = null;
-        $num_page = $this->request->getIntParam('page') ?? 1;
-        $limit = 5;
-        $posts = Post::paginate($num_page, $limit);
+    
 
-        $populars = Post::getPopular('comments', 'comments_count', 'post_id', 6);
-
-        $pages = ceil((int) Post::count() / 5);
-        return $this->response->html('posts', [
-            'posts' => $posts,
-            'pages' => $pages,
-            'current_page' => $num_page,
-            'populars' => $populars
-        ]);
+        public function login (){
+        $host  = $_SERVER['HTTP_REFERER'];
+        $user = $this->request->getPostParams();
+        var_dump($user);
     }
+//        $_SESSION['comment_errors'] = null;
+//        $_SESSION['inputs'] = null;
+//        $num_page = $this->request->getIntParam('page') ?? 1;
+//        $limit = 5;
+////        $posts = Post::paginate($num_page, $limit);
+//
+////        $populars = Post::getPopular('comments', 'comments_count', 'post_id', 6);
+//
+////        $pages = ceil((int) Post::count() / 5);
+//        return $this->response->html('posts', [
+////            'posts' => $posts,
+//            'pages' => $pages,
+//            'current_page' => $num_page,
+////            'populars' => $populars
+//        ]);
+//    }
 }

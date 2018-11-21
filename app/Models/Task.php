@@ -11,12 +11,12 @@ namespace App\Models;
 
 use App\Engine\Model;
 
-class Post extends Model
+class Task extends Model
 {
     /**
      * @var string
      */
-    public $table = 'posts';
+    public $table = 'tasks';
 
     /**
      * @var string
@@ -28,9 +28,9 @@ class Post extends Model
      */
     public $attributes = [
         'id',
-        'author',
-        'text',
+        'tasks	',
+        'status		',
+        'user_id',
         'updated_at'
     ];
-
 }

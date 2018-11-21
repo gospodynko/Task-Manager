@@ -45,6 +45,7 @@ class PostController extends Controller
     {
         $host  = $_SERVER['HTTP_REFERER'];
         $data = $this->request->getPostParams();
+        var_dump($data);
         $v = new Validator(
             [
                 'text' => 'required|string|min:10',

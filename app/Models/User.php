@@ -11,12 +11,12 @@ namespace App\Models;
 
 use App\Engine\Model;
 
-class Comment extends Model
+class User extends Model
 {
     /**
      * @var string
      */
-    public $table = 'comments';
+    public $table = 'users';
 
     /**
      * @var string
@@ -28,9 +28,10 @@ class Comment extends Model
      */
     public $attributes = [
         'id',
-        'author',
-        'text',
-        'post_id',
+        'role',
+        'email',
+        'password',
+        'token',
         'updated_at'
     ];
 }

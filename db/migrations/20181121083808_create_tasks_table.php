@@ -3,7 +3,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateCommentsTable extends AbstractMigration
+class CreateTasksTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -32,13 +32,14 @@ class CreateCommentsTable extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('comments');
+        $table = $this->table('tasks');
 
-        $table->addColumn('text', 'string')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('author', 'string')
-            ->addColumn('updated_at', 'integer')
-            ->addForeignKey('post_id', 'posts', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
+        $table->addColumn('tasks', 'text')
+            ->addColumn('status', 'string')
+            ->addColumn('user_id', 'integer')
+            ->addColumn('updated_at', 'datetime')
+            ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
+
             ->create();
     }
 }

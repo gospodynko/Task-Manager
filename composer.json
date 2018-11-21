@@ -1,9 +1,9 @@
 {
-    "name": "alex/mini-blog.dev",
+    "name": "oleh/api.dev",
     "authors": [
         {
-            "name": "AlexKruze",
-            "email": "sanjsuper@gmail.com"
+            "name": "Oleh",
+            "email": "hospodynko.o@gmail.com"
         }
     ],
     "require": {
