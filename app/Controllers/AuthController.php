@@ -36,4 +36,9 @@ class AuthController extends Controller {
         var_dump($user);
     }
     
+    public function updateUser (){
+        $user = $this->request->getPostParams();
+        var_dump($user);
+    }
+    
 }

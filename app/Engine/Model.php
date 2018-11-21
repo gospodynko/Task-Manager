@@ -43,6 +43,13 @@ class Model
         $result = $model->execute($sql);
         return $result;
     }
+    static public function update($column = null,$value = null,$key = null,$val = null){
+        $model = new static;
+        $sql = "UPDATE"." ". $model->table." SET ".$column." = ".$value." WHERE " .$key ." = ".$val;
+        $result = $model->execute($sql);
+//        $result = $model->fetchAll();
+        return  $result = $model->fetchAll();;
+    }
 
     /**
      * @param string $join_table
