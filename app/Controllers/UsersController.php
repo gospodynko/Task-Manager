@@ -27,8 +27,8 @@ class UsersController extends Controller
         if (count($errors)) {
             return $this->response->json($errors);
         }
-        $update = User::update('email','email','id',1);
-        var_dump($update);
+        $update = User::update('email','email123','id',1);
+        return $update;
     }
 
 

@@ -45,10 +45,15 @@ class Model
     }
     static public function update($column = null,$value = null,$key = null,$val = null){
         $model = new static;
-        $sql = "UPDATE"." ". $model->table." SET ".$column." = ".$value." WHERE " .$key ." = ".$val;
-        $result = $model->execute($sql);
+//        $sql = UPDATE .`users` SET `email` = 'test@gmail.com' WHERE `users`.`id` = 1;
+
+        $sql = "UPDATE"." ". $model->table." "."SET ".$column." = ". "'".$value."'"." WHERE " .$model->table.".".$key ." = ".$val;
+        var_dump($sql);
+        $result = $model->connect->prepare($sql)->execute();
+        $result = $model->execute($result);
+
 //        $result = $model->fetchAll();
-        return  $result = $model->fetchAll();;
+        return  $result ;
     }
 
     /**
