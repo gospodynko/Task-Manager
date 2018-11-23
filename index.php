@@ -18,6 +18,9 @@ try {
     $router->post('/login', 'AuthController@login');
     $router->get('/getUser', 'UsersController@getUser');
     $router->post('/updateUser', 'UsersController@updateUser');
+    $router->post('/addTask','TaskController@addTask');
+    $router->get('/getTasks','TaskController@getTasks');
+    $router->get('/getTask','TaskController@getTask');
     $router->get('/fibonacci', 'ExerciseController@fibonacci');
 //    $router->post('/comment/add', 'PostController@addComment');
 //    $router->get('/404', 'SystemController@notFound');

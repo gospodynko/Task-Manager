@@ -34,7 +34,7 @@ class CreateUsersTable extends AbstractMigration
     {
         $table = $this->table('users');
 
-        $table->addColumn('role', 'string')
+        $table->addColumn('role', 'enum', ['values' => ['admin', 'user']])
             ->addColumn('email', 'string')
             ->addColumn('password', 'string')
             ->addColumn('token', 'string')

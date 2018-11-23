@@ -35,7 +35,7 @@ class CreateTasksTable extends AbstractMigration
         $table = $this->table('tasks');
 
         $table->addColumn('tasks', 'text')
-            ->addColumn('status', 'string')
+            ->addColumn('status', 'enum', ['values' => ['done', 'inprogress','not_performed']])
             ->addColumn('user_id', 'integer')
             ->addColumn('updated_at', 'datetime')
             ->addForeignKey('user_id', 'users', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])

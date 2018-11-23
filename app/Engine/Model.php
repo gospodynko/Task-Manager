@@ -9,9 +9,11 @@
 namespace App\Engine;
 
 
+use Symfony\Component\Config\Definition\Exception\Exception;
+
 class Model
 {
-    public $connect;
+    private $connect;
 
     /**
      * Model constructor.
@@ -43,17 +45,19 @@ class Model
         $result = $model->execute($sql);
         return $result;
     }
-    static public function update($column = null,$value = null,$key = null,$val = null){
-        $model = new static;
-//        $sql = UPDATE .`users` SET `email` = 'test@gmail.com' WHERE `users`.`id` = 1;
-
-        $sql = "UPDATE"." ". $model->table." "."SET ".$column." = ". "'".$value."'"." WHERE " .$model->table.".".$key ." = ".$val;
-        var_dump($sql);
-        $result = $model->connect->prepare($sql)->execute();
-        $result = $model->execute($result);
-
-//        $result = $model->fetchAll();
-        return  $result ;
+    
+     public function update($column = null,$value = null,$key = null,$val = null){
+         try {
+             $model = new static;
+//             $sql = "UPDATE .`users` SET `email` = 'test12222@gmail.com' WHERE `users`.`id` = 1";
+             $sql = "UPDATE"." "."`".$model->table."`"." "."SET "."`".$column."`"." = ". "'".$value."'"." WHERE " ."`".$model->table."`"."."."`".$key."`" ." = "."'".$val."'";
+             $result = $model->execute($sql);
+         }
+        catch (Exception $e){
+            return $e->getMessage();
+        }
+         
+        return  true;
     }
 
     /**
@@ -216,10 +220,13 @@ class Model
 
     public function execute($sql, $params = [])
     {
+
         $attributes = array_flip($this->attributes);
         $result = [];
+
         $statement = $this->connect->prepare($sql);
         $statement->execute($params);
+
         foreach ($statement as $row) {
             $result[] = array_filter($row, function ($data) use ($attributes) {
                 return isset($attributes[$data]);

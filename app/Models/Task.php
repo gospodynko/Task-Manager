@@ -28,8 +28,8 @@ class Task extends Model
      */
     public $attributes = [
         'id',
-        'tasks	',
-        'status		',
+        'tasks',
+        'status',
         'user_id',
         'updated_at'
     ];
