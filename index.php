@@ -19,9 +19,14 @@ try {
     $router->get('/getUser', 'UsersController@getUser');
     $router->post('/updateUser', 'UsersController@updateUser');
     $router->post('/addTask','TaskController@addTask');
+    $router->post('/addUser','UsersController@addUser');
+    $router->post('/editTask','TaskController@editTask');
+
     $router->get('/getTasks','TaskController@getTasks');
+
     $router->get('/getTask','TaskController@getTask');
     $router->get('/fibonacci', 'ExerciseController@fibonacci');
+    $router->get('/get_price', 'ExerciseController@get_price');
 //    $router->post('/comment/add', 'PostController@addComment');
 //    $router->get('/404', 'SystemController@notFound');
     $app = Storage::get('App');

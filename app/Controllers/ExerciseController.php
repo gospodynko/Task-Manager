@@ -3,20 +3,28 @@ namespace App\Controllers;
 
 use App\Engine\Storage;
 use App\Engine\Validator;
+use NumberFormatter;
+
 class ExerciseController extends Controller {
 
     public function fibonacci()
     {
-        $number = $this->request->getParam('n');
-        if ($number == 0)
-            return 0;
-        else if ($number == 1)
-            return 1;
+        $n = $this->request->getParam('n');
 
-        // Recursive Call to get the upcoming numbers
-        else
-            return (Fibonacci($number-1) +
-                Fibonacci($number-2));
+        $result = [1, 1];
+
+        for($i = 2; $i <= $n; $i++ ) {
+            $result[] = $result[$i-1] + $result[$i-2];
+        }
+        return $this->response->json($result);
+    }
+
+    public function get_price()
+    {
+        $numbers = $this->request->getParam('number');
+        $lang = $this->request->getParam('lang');
+        $f = new NumberFormatter("$lang", NumberFormatter::SPELLOUT);
+         return $this->response->json($f->format($numbers));
     }
 
 

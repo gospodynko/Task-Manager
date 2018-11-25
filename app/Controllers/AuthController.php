@@ -9,7 +9,7 @@ use App\Models\User;
 class AuthController extends Controller {
     
     public function login (){
-        $host  = $_SERVER['HTTP_REFERER'];
+        
         $user = $this->request->getPostParams();
         $v = new Validator(
             [
@@ -29,16 +29,7 @@ class AuthController extends Controller {
             return $this->response->json('User not found');
         }
         return $this->response->json($get_user[0]['token']);
-    }
-    public function getUser (){
-        $user = $this->request->getParam('id');
-        $user = User::where([['id','=',$user]]);
-        var_dump($user);
-    }
-    
-    public function updateUser (){
-        $user = $this->request->getPostParams();
-        var_dump($user);
+//        return header("Authorization: Value=Token token= $get_user[0]['token'] ");
     }
     
 }

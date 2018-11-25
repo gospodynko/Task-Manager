@@ -56,6 +56,11 @@ class Validator
                             $this->errors = array_push_assoc($this->errors, $key, [$tmp_rule[0] => 'field ' . $key . ' must be a string']);
                         }
                         break;
+                    case 'email':
+                        if (isset($this->data[$key]) && !filter_var($this->data[$key], FILTER_VALIDATE_EMAIL)) {
+                            $this->errors = array_push_assoc($this->errors, $key, [$tmp_rule[0] => 'field ' . $key . ' must be a email']);
+                        }
+                        break;
                     case 'integer':
                         if (isset($this->data[$key]) && !is_numeric($this->data[$key])) {
                             $this->errors = array_push_assoc($this->errors, $key, [$tmp_rule[0] => 'field ' . $key . ' must be a integer']);
