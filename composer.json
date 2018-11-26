@@ -1,0 +1,17 @@
+{
+    "name": "oleh/api.dev",
+    "authors": [
+        {
+            "name": "Oleh",
+            "email": "hospodynko.o@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.10.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+}
