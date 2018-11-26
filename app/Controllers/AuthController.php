@@ -6,6 +6,7 @@ use App\Engine\Validator;
 use App\Models\Task;
 use App\Models\User;
 
+
 class AuthController extends Controller {
     
     public function login (){
@@ -31,5 +32,5 @@ class AuthController extends Controller {
         return $this->response->json($get_user[0]['token']);
 //        return header("Authorization: Value=Token token= $get_user[0]['token'] ");
     }
-    
+        
 }

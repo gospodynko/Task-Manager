@@ -1,8 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Engine\Storage;
-use App\Engine\Validator;
+
 use NumberFormatter;
 
 class ExerciseController extends Controller {

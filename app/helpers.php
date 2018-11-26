@@ -10,7 +10,7 @@ if (!function_exists('env')) {
      */
     function env($key, $default = null): string
     {
-        $config = parse_ini_file(__DIR__ . '/config.ini');
+        $config = parse_ini_file(__DIR__ . '/config.ini.example');
 
         $value = $config[$key] ?? $default;
 
