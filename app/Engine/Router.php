@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: alex
+ * User: oleh
  * Date: 29.10.18
  * Time: 15:08
  */
@@ -31,6 +31,7 @@ class Router
     public function get($path, $params)
     {
         $this->map['GET'][$path] = $params;
+        
     }
 
     public function post($path, $params)

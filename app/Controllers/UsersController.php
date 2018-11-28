@@ -9,8 +9,8 @@ use Symfony\Component\Config\Definition\Exception\Exception;
 class UsersController extends Controller
 {
     public function getUser (){
-
-
+        var_dump('here');
+        $user_id = getAllParam();
         $headers = apache_request_headers();
         $token = $headers['token'];
         $u = User::where([['token','=',$token]]);

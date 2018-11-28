@@ -13,7 +13,7 @@ try {
     $router = Storage::get('Router');
     $router->post('/post/add', 'PostController@add');
     $router->post('/login', 'AuthController@login');
-    $router->get('/getUser', 'UsersController@getUser');
+    $router->get('/getUser/([0-9])', 'UsersController@getUser');
     $router->post('/updateUser', 'UsersController@updateUser');
     $router->post('/addTask','TaskController@addTask');
     $router->post('/addUser','UsersController@addUser');

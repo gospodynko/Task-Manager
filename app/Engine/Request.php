@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: alex
+ * User: oleh
  * Date: 29.10.18
  * Time: 15:25
  */
@@ -78,6 +78,7 @@ class Request
 
     public function setRoute($route)
     {
+        var_dump($route);
         $route = explode('@', $route);
         if (empty($route[0])) {
             throw new \Exception('Not found controller');
