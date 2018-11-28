@@ -22,6 +22,7 @@ try {
     $router->get('/getTask','TaskController@getTask');
     $router->get('/fibonacci', 'ExerciseController@fibonacci');
     $router->get('/get_price', 'ExerciseController@get_price');
+    $router->get('/num2text_ua', 'ExerciseController@num2text_ua');
     $app = Storage::get('App');
     $app->run();
 } catch (\Exception $e) {
