@@ -17,10 +17,10 @@ class UsersController extends Controller
         if($u[0]['role'] =='admin') {
             $user = $this->request->getParam('id');
             $user = User::where([['id', '=', $user]]);
-            return $this->response->json($user, '200');
+            return $this->response->json($user, 200);
         }
         else{
-            return $this->response->json('access denided');
+            return $this->response->json(401);
         }
     }
 
@@ -34,7 +34,7 @@ class UsersController extends Controller
         );
         $errors = $v->check()->errors();
         if (count($errors)) {
-            return $this->response->json($errors,'403');
+            return $this->response->json($errors,403);
         }
         $headers = apache_request_headers();
         $token = $headers['token'];
@@ -61,7 +61,7 @@ class UsersController extends Controller
             return true;
         }
         else{
-            return $this->response->json('access denided');
+            return $this->response->json(403);
         }
     }
     public function addUser (){
@@ -75,7 +75,7 @@ class UsersController extends Controller
 
         $errors = $v->check()->errors();
         if (count($errors)) {
-            return $this->response->json($errors,'403');
+            return $this->response->json($errors,403);
         }
         $headers = apache_request_headers();
         $token = $headers['token'];
@@ -88,13 +88,13 @@ class UsersController extends Controller
             $user['updated_at'] = date('Y-m-d H:i:s');
             $user = User::add($user);
             if($user){
-                return $this->response->json(http_response_code());
+                return $this->response->json(200);
             }
-            return $this->response->json(http_response_code());
+            return $this->response->json(404);
         }
 
         else{
-            return $this->response->json('access denided');
+            return $this->response->json(403);
         }
     }
 

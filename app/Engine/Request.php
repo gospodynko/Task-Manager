@@ -78,7 +78,7 @@ class Request
 
     public function setRoute($route)
     {
-        var_dump($route);
+        
         $route = explode('@', $route);
         if (empty($route[0])) {
             throw new \Exception('Not found controller');

@@ -27,9 +27,9 @@ class AuthController extends Controller {
         $get_user = User::where([['email', '=', $user['email']]]);
         if(!$get_user){
 
-            return $this->response->json('User not found');
+            return $this->response->json(403);
         }
-        return $this->response->json($get_user[0]['token']);
+        return $this->response->json($get_user[0]['token'],200);
 //        return header("Authorization: Value=Token token= $get_user[0]['token'] ");
     }
         

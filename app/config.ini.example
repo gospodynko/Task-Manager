@@ -1,4 +1,4 @@
 DB_DRIVER   =   mysql
 DB_USER     =   root
-DB_PASSWORD =   root
-DB_DATABASE =   api
+DB_PASSWORD =   admin
+DB_DATABASE =   api1

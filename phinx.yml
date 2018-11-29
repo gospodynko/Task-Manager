@@ -8,27 +8,27 @@ environments:
     production:
         adapter: mysql
         host: localhost
-        name: api
+        name: api1
         user: root
-        pass: 'root'
+        pass: 'admin'
         port: 3306
         charset: utf8
 
     development:
         adapter: mysql
         host: localhost
-        name: api
+        name: api1
         user: root
-        pass: 'root'
+        pass: 'admin'
         port: 3306
         charset: utf8
 
     testing:
         adapter: mysql
         host: localhost
-        name: api
+        name: api1
         user: root
-        pass: 'root'
+        pass: 'admin'
         port: 3306
         charset: utf8
 
